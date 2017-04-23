@@ -1,11 +1,18 @@
 #!/bin/bash
-FILES="$1/*"
 
-CAFFE_HOME=../caffe
-COLORIZE_HOME=.
+DIR="$1"
+FILES="$DIR/*"
+
+mkdir -p "$DIR/colourised/" "$DIR/stitched/"
 
 for FILE in $FILES
 do
-  PYTHONPATH="$CAFFE_HOME/python/:$PYTHONPATH" python "$COLORIZE_HOME/colorize.py" --gpu -1 -img_in "$FILE"  -img_out "$FILE.colourised.jpg"
-  convert "$FILE" "$FILE.colourised.jpg" -append "$FILE.stitched.jpg"
+  if [ -f "$FILE" ]; then
+    FILE_NAME=$(basename "$FILE")
+    echo "Colouring: $FILE_NAME"
+    docker run -t -v "$DIR:/base" mecab/siggraph2016_colorization "/base/$FILE_NAME" "/base/colourised/$FILE_NAME"
+    if [ -f "$DIR/colourised/$FILE_NAME" ]; then
+      convert "$DIR/$FILE_NAME" "$DIR/colourised/$FILE_NAME" +append "$DIR/stitched/$FILE_NAME"
+    fi
+  fi
 done
