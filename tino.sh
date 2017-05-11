@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# colourise all images in a directory and then stitch them to the originals
+# colourise all images in a directory and then stitch each one to the original
 
 if [ ! $# -eq 1 ]; then
   echo "Usage: ./tino.sh <directory>"
