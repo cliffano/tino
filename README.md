@@ -6,9 +6,11 @@
 Tino
 ----
 
-Tino is a utility script for automatically colouring grayscale images, using Waseda University's SIGGRAPH 2016 [Colorization](http://hi.cs.waseda.ac.jp/~iizuka/projects/colorization/en/) project, via mecab's [siggraph2016_colorization](https://hub.docker.com/r/mecab/siggraph2016_colorization/) Docker image.
+Tino is a utility script for automatic colourisation of grayscale images, using Waseda University's SIGGRAPH 2016 [Colorization](http://hi.cs.waseda.ac.jp/~iizuka/projects/colorization/en/) project, via mecab's [siggraph2016_colorization](https://hub.docker.com/r/mecab/siggraph2016_colorization/) Docker image.
 
 Tino will iterate through all images under a given directory, colourise each one of them, and then stitch the grayscale and the colourised versions. This provides a convenient way to compare both versions next to each other, across multiple images in one go.
+
+Check out some [sample galleries](https://au.pinterest.com/pakkunbot/).
 
 Installation
 ------------
