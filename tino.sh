@@ -23,7 +23,7 @@ do
     FILE_NAME=$(basename "$FILE")
     echo "Processing: $DIR/$FILE_NAME"
 
-    if [ $TYPE -eq 'colorization-siggraph2016' ]; then
+    if [ "$TYPE" = "colorization-siggraph2016" ]; then
       docker run -t -v "$DIR:/base" mecab/siggraph2016_colorization "/base/$FILE_NAME" "/base/processed/$FILE_NAME"
     fi
 
