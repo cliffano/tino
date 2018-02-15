@@ -36,3 +36,12 @@ Tino will then create subdirectories `processed` and `stitched` under the specif
 `stitched` directory contains the original image stitched to its corresponding processed version.
 
 If the image orientation is portrait, the images will be stitched horizontally. If landscape, then vertically.
+
+FAQ
+---
+
+Q: What does this error mean on `colorization-siggraph2016` processing type?
+
+    /root/bin/colorize: line 13:     5 Killed                  th colorize.lua $1 $2
+
+A: I would love to have better debug information to figure out the root cause of the error. But given the limited error message, from trial and error I can only say that the error goes away if you reduce the file dimension.
