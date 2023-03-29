@@ -6,7 +6,9 @@
 Tino
 ----
 
-Tino is a utility script for automatic image processing. It currently supports the following processing types:
+Tino is a utility script for automatic colourisation of grayscale images.
+
+It currently supports the following processing types:
 
 * `colorization-siggraph2016`
 Colourisation of grayscale images using Waseda University's SIGGRAPH 2016 [Colorization](http://hi.cs.waseda.ac.jp/~iizuka/projects/colorization/en/) project, via mecab's [siggraph2016_colorization](https://hub.docker.com/r/mecab/siggraph2016_colorization/) Docker image.
